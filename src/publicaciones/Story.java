@@ -1,9 +1,11 @@
 package publicaciones;
 
+import interfaces.Reportable;
+
 // implements Reportable
 // OJO: las stories NO son Comentable. Se responden por mensaje directo,
 // no por comentario debajo. No le agregues Comentable.
-public class Story extends Publicacion {
+public class Story extends Publicacion implements Reportable {
 
     private int horasRestantes;
 
@@ -24,4 +26,10 @@ public class Story extends Publicacion {
     public void setHorasRestantes(int horasRestantes) { this.horasRestantes = horasRestantes; }
 
     // aca van los metodos de Reportable
+    @Override 
+    public void reportar(String motivo) {
+    	System.out.println("El motivo es: " + motivo);
+    }
+    
+    
 }

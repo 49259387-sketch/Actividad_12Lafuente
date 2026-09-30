@@ -2,7 +2,10 @@ package usuarios;
 
 // implements Comentable, Reportable
 // El "comentario en una cuenta" es lo que se ve en su muro.
-public class Cuenta extends Usuario {
+import interfaces.Comentable;
+import interfaces.Reportable;
+
+public class Cuenta extends Usuario implements Comentable, Reportable {
 
     private String nombreReal;
     private int cantidadAmigos;
@@ -27,4 +30,16 @@ public class Cuenta extends Usuario {
     public void setCantidadAmigos(int cantidadAmigos) { this.cantidadAmigos = cantidadAmigos; }
 
     // aca van los metodos de Comentable y Reportable
+    
+    @Override
+    public void comentar(String autor, String texto) {
+        System.out.println("El autor es: " + autor);
+        System.out.println("El comentario es: " + texto);
+    }
+
+    @Override
+    public void reportar(String motivo) {
+        System.out.println("El motivo del reporte es: " + motivo);
+    }
+    
 }

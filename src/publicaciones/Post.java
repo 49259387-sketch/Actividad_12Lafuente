@@ -1,6 +1,10 @@
 package publicaciones;
+
+import interfaces.Comentable;
+import interfaces.Reportable;
+
 // implements Comentable, Reportable
-public class Post extends Publicacion {
+public class Post extends Publicacion implements Comentable, Reportable{
 
     private String imagenUrl;
 
@@ -23,4 +27,16 @@ public class Post extends Publicacion {
     public void setImagenUrl(String imagenUrl) { this.imagenUrl = imagenUrl; }
 
     // aca van los metodos de Comentable y Reportable
+    
+    @Override
+    public void comentar(String autor, String texto) {
+        System.out.println("El autor es: " + autor);
+        System.out.println("El comentario es: " + texto);
+    }
+
+    @Override
+    public void reportar(String motivo) {
+        System.out.println("El motivo del reporte es: " + motivo);
+    }
+    
 }

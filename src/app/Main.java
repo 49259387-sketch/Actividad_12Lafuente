@@ -8,6 +8,8 @@ import publicaciones.Story;
 import usuarios.Cuenta;
 import usuarios.Pagina;
 import usuarios.Usuario;
+import interfaces.Comentable;
+import interfaces.Reportable;
 
 public class Main {
 
@@ -51,9 +53,25 @@ public class Main {
         //
         // Descomenta y anota el error del compilador:
         //
+        ArrayList<Reportable> reportes = new ArrayList<>();
+        reportes.add(cuenta);
+        reportes.add(pagina);
+        reportes.add(story);
+        reportes.add(post);
+        
+        for (Reportable r : reportes) {
+        
+        	 r.reportar("\nPor incumplir las normas \n");
+        }
+        
+      
+        // Descomenta y anota el error del compilador:
+        //
         // ArrayList<Publicacion> reportes = new ArrayList<>();
         // reportes.add(cuenta);
-
+        
+        // Esta mal porque el array toma la interfaz Publicacion
+        
         // resolver el problema de arriba en la Parte 5
     }
 }
